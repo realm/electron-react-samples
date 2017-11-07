@@ -42,6 +42,7 @@ export class App extends React.Component<{}, {}> {
   }
 
   componentDidMount() {
+    // Update every 1000 products with a new faker data every 200 milliseconds
     this.timer = setInterval(() => {
       myRealm.write(() => {
         for (var index = 0; index < 1000; index++) {
@@ -55,7 +56,7 @@ export class App extends React.Component<{}, {}> {
     }, 200)
 
     products.addListener(() => {
-      this.setState({})
+      this.forceUpdate()
     })
   }
 
