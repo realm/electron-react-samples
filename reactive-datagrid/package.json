@@ -1,0 +1,77 @@
+{
+  "name": "my-new-project",
+  "productName": "my-new-project",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "tslint --project tsconfig.json --type-check --force",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [],
+  "author": "maximilianalexander",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "yarn"
+      },
+      "electronWinstallerConfig": {
+        "name": "my_new_project"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "mynewproject"
+      }
+    }
+  },
+  "dependencies": {
+    "@types/electron-devtools-installer": "^2.0.2",
+    "@types/react": "^0.14.55",
+    "@types/react-dom": "^0.14.20",
+    "electron-compile": "^6.4.2",
+    "electron-devtools-installer": "^2.1.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "faker": "^4.1.0",
+    "react": "15.4.2",
+    "react-data-grid": "2.0.60",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "realm": "^2.0.2",
+    "tslib": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/faker": "^4.1.1",
+    "@types/react-data-grid": "^2.0.7",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "electron-builder": "^19.37.2",
+    "electron-forge": "^4.1.2",
+    "electron-prebuilt-compile": "1.7.9",
+    "tslint": "^5.1.0",
+    "typescript": "~2.2.2"
+  }
+}
